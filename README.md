@@ -16,5 +16,5 @@
 
 <p>The following schema was inferred from the CSV files provided (located in the data directory) and is how the db was setup:</p>
 
-![](images/QuickDBD-Free Diagram.png)
+![](images/diagram.png)
 
