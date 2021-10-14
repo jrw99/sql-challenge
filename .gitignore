@@ -1,0 +1,9 @@
+# Adding config.py file
+config.py
+
+# Adding data file for importing until I parameterize the path
+import_data.sql
+
+*/.ipynb_checkpoints/*
+
+*/__pycache__/*
