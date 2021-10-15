@@ -69,6 +69,19 @@ from public."Employees" e
 group by e.last_name
 order by e.last_name desc
 
+--Bonus
+-- most common salary ranges for employees
+select min(salary) from public."Salaries"
+select max(salary) from public."Salaries"
+
+--average salary by title
+select t.title, avg(s.salary::numeric)
+from public."Employees" e
+	inner join public."Titles" t
+	on e.emp_title_id = t.title_id
+	inner join public."Salaries" s
+	on e.emp_no = s.emp_no
+group by t.title
 
 --Epilogue
 select * from public."Employees" e where e.emp_no = 499942
