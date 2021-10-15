@@ -18,13 +18,14 @@ from public."Department_Manager" dm
 	on dm.dept_no = d.dept_no
 	inner join public."Employees" e
 	on dm.emp_no = e.emp_no
-	
---select dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name
---from public."Employees" e
---		inner join public."Department_Manager" dm
---			inner join public."Departments" d
---			on dm.dept_no = d.dept_no
---		on dm.emp_no = e.emp_no
+
+--alternate that does the same thing above but is nested
+select dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name
+from public."Employees" e
+		inner join public."Department_Manager" dm
+			inner join public."Departments" d
+			on dm.dept_no = d.dept_no
+		on dm.emp_no = e.emp_no
 	
 	
 --4. List the department of each employee with the following information: employee number, last name, first name, and department name.
@@ -69,12 +70,18 @@ from public."Employees" e
 group by e.last_name
 order by e.last_name desc
 
+
 --Bonus
+
 -- most common salary ranges for employees
+
+--get the min and max to get the book ends for bins, the rest will get done in the notebook
 select min(salary) from public."Salaries"
 select max(salary) from public."Salaries"
 
 --average salary by title
+
+--determine querey to get the data for the notebook
 select t.title, avg(s.salary::numeric)
 from public."Employees" e
 	inner join public."Titles" t
@@ -82,6 +89,7 @@ from public."Employees" e
 	inner join public."Salaries" s
 	on e.emp_no = s.emp_no
 group by t.title
+
 
 --Epilogue
 select * from public."Employees" e where e.emp_no = 499942
