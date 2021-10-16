@@ -17,5 +17,5 @@
 
 <p>The following schema was inferred from the CSV files provided (located in the data directory) and is how the db was setup:</p>
 
-![](images/diagram.png)
+![](EmployeeSQL/diagram.png)
 
